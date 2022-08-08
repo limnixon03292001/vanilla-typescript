@@ -11,28 +11,28 @@ console.log(getFullName("haha", "hehe"));
 
 
 //Objects / Interfaces
-// interface UserInterface {
-//     name: string;
-//     age?: number;
-//     getMessage(): string
-// }
+interface UserInterface {
+    name: string;
+    age?: number;
+    getMessage(): string
+}
 
-// const user: UserInterface = {
-//     name: "Monster",
-//     age: 4,
-//     getMessage() {
-//         return "Hello" + name;
-//     },
-// }
+const user: UserInterface = {
+    name: "Monster",
+    age: 4,
+    getMessage() {
+        return "Hello" + name;
+    },
+}
 
-// const user2: UserInterface = {
-//     name: "Jack",
-//     getMessage() {
-//         return "Hello" + name;
-//     },
-// }
+const user2: UserInterface = {
+    name: "Jack",
+    getMessage() {
+        return "Hello" + name;
+    },
+}
 
-// console.log(user.getMessage());
+console.log(user.getMessage());
 
 //Union & Type alias
 type ID = string;
@@ -87,14 +87,14 @@ let numericPageNum: number = (pageNum as unknown ) as number;
 
 // working with DOM
 
-// const someElement = document.querySelector(".foo") as HTMLInputElement;
+const someElement = document.querySelector(".foo") as HTMLInputElement;
 
-// console.log("s", someElement.value);
+console.log("s", someElement.value);
 
-// someElement.addEventListener("blur", (event) => {
-//     const target = event.target as HTMLInputElement;
-//     console.log("Event", target.value);
-// })
+someElement.addEventListener("blur", (event) => {
+    const target = event.target as HTMLInputElement;
+    console.log("Event", target.value);
+})
 
 //working with class
 
@@ -114,9 +114,9 @@ class User implements UserInterface1 {
         this.lastName = lastName;
     }
 
-    // changeUnchangeableName(): void {
-    //     this.unchangeableName = "foo";
-    // }
+    changeUnchangeableName(): void {
+        this.unchangeableName = "foo";
+    }
 
     getFullName() {
         return this.firstName + " " + this.lastName;
@@ -171,19 +171,19 @@ const user3: UserInterface2<string[], string> = {
     meta: "Doe",
 }
 
-// const result = addId<UserInterface2>(user2);
-// console.log("result", result);
+const result = addId<UserInterface2>(user2);
+console.log("result", result);
 
 
 // Enums
 
-// const statuses = {
-//     notStarted: 0,
-//     inProgress: 1,
-//     done: 2,
-// }
+const statuses = {
+    notStarted: 0,
+    inProgress: 1,
+    done: 2,
+}
 
-// console.log(statuses.inProgress);
+console.log(statuses.inProgress);
 
 enum StatusEnum {
     NotStarted = "notStarted",
